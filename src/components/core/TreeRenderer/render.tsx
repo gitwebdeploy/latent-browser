@@ -20,7 +20,7 @@ export const RenderNode = ({
   if (chunks.length === 1) {
     const child = chunks[0].split('߷').pop()
 
-    return child ? <>child</> : undefined
+    return child ? (child as unknown as JSX.Element) : undefined
   }
 
   // sanity check: if the length was not 1, as is not 2 either

@@ -1,14 +1,20 @@
-const history: string[] = []
+import { ReactNode } from 'react'
+import { onlyText } from 'react-children-utilities'
 
 import { appContext } from './appContext'
+
+const history: string[] = []
 
 export const runInContext = (ctx: any, src: string) => {
   return new Function(...Object.keys(ctx), src)(...Object.values(ctx))
 }
 
-export const evaluate = (src: string): { result: any; isDynamic: boolean } => {
+export const evaluate = <T>(
+  input: ReactNode,
+  defaultValue: T
+): { result: any; isDynamic: boolean } => {
+  const src = onlyText(input)
   try {
-    src = `${src}`
     // now it's time to interpret some JS, if any
     const matches = src.match(/⎝([^⎞]+)⎞/)
     const js = matches?.[1]
@@ -34,7 +40,10 @@ export const evaluate = (src: string): { result: any; isDynamic: boolean } => {
       } else if (candidateBoolean === 'false') {
         return { result: false, isDynamic: false }
       }
-      return { result: src, isDynamic: false }
+
+      // ok so this was not a string but actual ReactNode children maybe,
+      // so let's leave the original content untouched
+      return { result: input, isDynamic: false }
     }
 
     // console.log('evaluate: js=' + js)
@@ -44,8 +53,7 @@ export const evaluate = (src: string): { result: any; isDynamic: boolean } => {
     const result = eval?.(js) // runInContext(tmpContext, js)
     // console.log('evaluate:result=' + JSON.stringify(result, null, 2))
 
-    // we can't remove this console log, or else the application doesn't work anymore
-    // console.log('evaluate: appContext=' + JSON.stringify(appContext, null, 2))
+    // we can't remove this JSON.stringify, or else the application doesn't work anymore!
     JSON.stringify(appContext, null, 2)
 
     return {
@@ -56,10 +64,10 @@ export const evaluate = (src: string): { result: any; isDynamic: boolean } => {
       isDynamic: !!js.match(/\$[a-zA-Z_]+/),
     }
   } catch (exc) {
-    console.log('failed to eval: ' + exc.toString())
+    console.log('failed to eval: ' + exc)
 
     return {
-      result: src.replace(/⎝([^⎞]+)⎞/, ''),
+      result: src.replace(/⎝([^⎞]+)⎞/, defaultValue),
       isDynamic: false,
     }
   }

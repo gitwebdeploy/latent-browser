@@ -1,5 +1,5 @@
 import { type ReactNode } from 'react'
-import { type Component } from '../../../types'
+import { type Component } from '~/plugins/types'
 
 export const h1 = {
   component: ({ children }: { children: ReactNode }) => (

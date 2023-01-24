@@ -3,7 +3,7 @@ import { onlyText } from 'react-children-utilities'
 
 import { Icon } from '../../../../components/icon'
 
-import { type Component } from '../../../types'
+import { type Component } from '~/plugins/types'
 
 export const feats: Component = {
   component: ({

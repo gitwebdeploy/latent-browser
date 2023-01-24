@@ -1,23 +1,41 @@
 import { ExoticComponent, FC } from 'react'
 
 export interface Param {
+  /**
+   * Documentation of the parameter (will be injectected in the prompt)
+   */
   doc?: string
 
-  // sometimes we want to give to the LLM a simplified name,
-  // so we use "prop" to define the actual component prop field key
+  /**
+   * Actual name of the prop field (might be long)
+   */
   prop?: string
 
-  // possible values (aka "types")
+  /*
+   * possible values (aka "types")
+   */
   values?: Array<string | number | boolean>
 }
 export interface Component {
+  /**
+   * The React component to use
+   */
   component?: ExoticComponent | FC
+
+  /**
+   * Documentation of component.
+   *
+   * Should be sparse, only a few words.
+   */
   doc: string
 
   // indicate a scope restriction
   allowedParents?: string
   allowedChildren?: string
 
+  /**
+   * Record of parameters
+   */
   params?: Record<string, Param>
 }
 export type API = Record<string, Component>
@@ -27,6 +45,11 @@ export type Examples = Record<string, Example>
 
 export interface Plugin {
   name: string
+  examples?: Examples
+  api: API
+}
+
+export interface Plugin {
   examples?: Examples
   api: API
 }

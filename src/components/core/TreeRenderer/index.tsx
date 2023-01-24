@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
+import { useInterval } from '@mantine/hooks'
 
 import { useComponentTree } from './useComponentTree'
 import { renderTree } from './render'
 import { ComponentTree } from '~/prompts'
-import { useDebounce, useMouseDown, useMousePosition } from '~/hooks'
-import { useInterval } from '@mantine/hooks'
+import { useMouseDown, useMousePosition } from '~/hooks'
 
 export const TreeRenderer = ({
   children,
@@ -22,7 +22,7 @@ export const TreeRenderer = ({
   // const forceRefresh = useDebounce(`${x} ${y} ${down}`, 50)
 
   const [seconds, setSeconds] = useState(0)
-  const interval = useInterval(() => setSeconds((s) => s + 1), 2000)
+  const interval = useInterval(() => setSeconds((s) => s + 1), 1000)
 
   useEffect(() => {
     interval.start()
@@ -30,16 +30,12 @@ export const TreeRenderer = ({
   }, [])
 
   // use "seconds" to force a re-rendering every X seconds
-  const forceRefresh = seconds
+  const forceRefresh = false // seconds
 
   const content = useMemo(
     () => renderTree({ children: tree }),
     [tree, forceRefresh]
   )
 
-  return (
-    <div className="bg-primary-background h-screen w-screen flex overflow-hidden">
-      {content}
-    </div>
-  )
+  return <>{content}</>
 }

@@ -35,7 +35,7 @@ export const getProps = ({
       value = value.replace(/ᐃ/g, '\n')
 
       // now it's time to interpret some JS, if any
-      const { result } = evaluate(value)
+      // const { result } = evaluate(value)
 
       const propDoc = params[key]
 
@@ -79,7 +79,7 @@ export const getProps = ({
 
       return {
         ...acc,
-        [prop]: result,
+        [prop]: value,
       }
     },
     {

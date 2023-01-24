@@ -1,27 +1,42 @@
 import { Children, ReactNode } from 'react'
-import { Content } from '../../../../components/core/Content'
-import { toggle } from '../../../common'
+import { onlyText } from 'react-children-utilities'
 
-import { type Component } from '../../../types'
+import { Content } from '~/components/core/Content'
+import { type Component } from '~/plugins/types'
 
-const Page = ({ children }: { children?: ReactNode }): JSX.Element => {
+const Page = ({
+  children,
+  type,
+}: {
+  children?: ReactNode
+  type?: ReactNode
+}): JSX.Element => {
   const nbItems = Children.toArray(children).length
 
+  const layoutType = onlyText(type) === 'app' ? 'flex-row' : 'flex-col'
+
   return (
-    // if we have only one child then we wrap it into a nice content block
-    // full screen applications can just omit to call Page
-    nbItems === 1 ? <Content>{children}</Content> : <>{children}</>
+    <div
+      className={[
+        'bg-primary-background h-screen w-screen flex overflow-hidden',
+        layoutType,
+      ].join(' ')}
+      // if we have only one child then we wrap it into a nice content block
+      // full screen applications can just omit to call Page
+    >
+      {nbItems === 1 ? <Content>{children}</Content> : children}
+    </div>
   )
 }
 
 export const page: Component = {
   component: Page,
-  doc: 'web page (for sites, landing pages, blogs..) with customizable colors',
+  doc: 'webpage',
   params: {
-    f: {
-      prop: 'fullscreen',
-      doc: 'fullscreen is recommanded to render games',
-      values: toggle,
+    t: {
+      prop: 'type',
+      doc: 'layout type eg. "site" (for corpo websites, landing pages etc), "app" (for mobile, desktop and web apps, utilities..) or "full" for fullscreen games',
+      // values: ['site', 'app', 'full']
     },
     pri: {
       prop: 'primary',
@@ -40,7 +55,7 @@ export const page: Component = {
       doc: 'background color (for the whole page)',
     },
     accent: {
-      doc: 'accentuation color',
+      doc: 'accent/highlight color',
     },
   },
 }

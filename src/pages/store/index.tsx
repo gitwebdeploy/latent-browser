@@ -67,7 +67,7 @@ function StoreIndex() {
           </Sidebar.Items>
         </Sidebar>
       </div>
-      <div className="flex flex-col flew-grow">
+      <div className="flex flex-col flex-grow">
         <h1 className="text-4xl font-semibold text-gray-800 ">Marketplace</h1>
         <h3 className="text-4xl font-semibold text-gray-800 ">Featured apps</h3>
         <p className="italic text-gray-600">Featured apps</p>

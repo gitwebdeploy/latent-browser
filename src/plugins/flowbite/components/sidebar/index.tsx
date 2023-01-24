@@ -5,7 +5,7 @@ import { Sidebar } from 'flowbite-react'
 
 import { getIcon } from '../../../../components/icon/getIcon'
 
-import { type Component } from '../../../types'
+import { type Component } from '~/plugins/types'
 
 export const sidebar: Component = {
   component: ({ children }: { children?: ReactNode }) => (

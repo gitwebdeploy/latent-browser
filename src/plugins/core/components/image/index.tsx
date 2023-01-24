@@ -1,6 +1,6 @@
 import { LatentImage } from '~/components/core'
 
-import { type Component } from '../../../types'
+import { type Component } from '~/plugins/types'
 
 export const image: Component = {
   component: LatentImage,

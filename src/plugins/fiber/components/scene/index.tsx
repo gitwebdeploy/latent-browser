@@ -1,7 +1,7 @@
 import { ReactNode, memo } from 'react'
 import { Canvas } from '@react-three/fiber'
 
-import { type Component } from '../../../types'
+import { type Component } from '~/plugins/types'
 
 import { Environment1 } from '../../primitives/environments'
 import { Shadows } from '../../primitives/shadows'

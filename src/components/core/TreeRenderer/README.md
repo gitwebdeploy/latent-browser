@@ -10,9 +10,12 @@ Note that due to the nature of LLMs, the renderer has to be robust to small erro
 
 One of the most common error is the LLM trying to use a component from one namespace (eg. a PDF text block) in a completely different scope (eg. a WebGL scene).
 
-In that case we try to find a equivalent in the correct scope
+In that case we try to find an equivalent in the correct scope.
+Note: there are solutions to prevent this (eg. generate each tree node individually,
+with a limited scope in the prompt, to not tell the LLM about incompatible nodes),
+but there are a bit tricky to implement, it will take some time.
 
 ### LLM using an unknown node id
 
-In that cas what we do is that we look for the closest component.
+In that case what we do is that we look for the closest component.
 If we are withing a constrained scope, this search will be within the parent scope.

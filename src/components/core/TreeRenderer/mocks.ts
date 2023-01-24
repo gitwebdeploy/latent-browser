@@ -1,4 +1,4 @@
-export const mockTreeString = `- "ui.page⎛pri≋#000000߷sec≋#666666߷fg≋#ffffff߷bg≋#cccccc߷accent≋#ff0000":
+export const mockTreeStringFiber = `- "ui.page⎛t≋app߷pri≋#000000߷sec≋#666666߷fg≋#ffffff߷bg≋#cccccc߷accent≋#ff0000":
   - "fl.sidebar⎛":
     - "fl.sidebar_item⎛i≋home߷Home"
     - "fl.sidebar_item⎛i≋info߷Interesting Facts"
@@ -13,9 +13,21 @@ export const mockTreeString = `- "ui.page⎛pri≋#000000߷sec≋#666666߷fg≋#
       - "fl.field⎛t≋number߷i≋num1߷l≋X"
       - "fl.field⎛t≋number߷i≋num2߷l≋Y"
     - "co.js⎛⎝$x = parseInt($('#num1').val() || '0'), $y = parseInt($('#num2').val() || '0'), $z = $x + $y⎞"
-    - "ui.p⎛Result: ⎝$z⎞"
-    - "ui.h2⎛Welcome To Duck Blog!"
-    - "ui.p⎛Welcome to my blog about ducks! Here, you will find all the necessary information about ducks, from the basics of a duck's life cycle to its migration habits, mating rituals, and parenting techniques. It will be filled with fun facts, stories, and anecdotes about ducks in an interesting, yet informative style. So, come join us and let's explore the beautiful and fascinating world of ducks together!"
+    - "ui.md⎛
+    # Result
+    Result: ⎝$z⎞
+    # Welcome To Duck Blog!
+    Welcome to my blog about ducks!
+    Here, you will find all the necessary information about ducks,
+    from the basics of a duck's life cycle to its migration habits,
+    mating rituals, and parenting techniques.
+    
+    It will be filled with fun facts,
+    stories, and anecdotes about ducks in an interesting,
+    yet informative style.
+    
+    So, come join us and let's explore the beautiful
+    and fascinating world of ducks together!"
     - "fl.feats⎛t≋Swiss design.߷s≋Your TimeWatch will truly be your companion for life.":
       - "fl.feat⎛i≋clock߷t≋Predict the future߷Predict the future, not the past. With the new TimeWatch you see what's coming see up to 2 days in advance. Pro users can see up to 7+ weeks."
       - "fl.feat⎛i≋microscope߷t≋Incredible quality߷Made in the Swiss Alps our TimeWatch has been tested in deep space, on Mars, in the New York subway and in a wormhole. It truly passes the trial of time."
@@ -63,3 +75,11 @@ export const mockTreeString = `- "ui.page⎛pri≋#000000߷sec≋#666666߷fg≋#
       - "fl.footer_links⎛":
         - "fl.footer_link⎛h≋#߷About"
         - "fl.footer_link⎛h≋#߷Contact"`
+
+export const mockTreeStringPixi = `
+- "ui.page⎛t≋app߷pri≋#000000߷sec≋#666666߷fg≋#ffffff߷bg≋#cccccc߷accent≋#ff0000":
+  - "px.stage⎛b≋#c7a4b0":
+    - "px.container⎛":
+      - "px.sprite⎛x≋⎝$mouse.x - 100⎞߷y≋⎝$mouse.y⎞߷w≋200߷h≋200߷a cat"`
+
+export const mockTreeString = mockTreeStringPixi

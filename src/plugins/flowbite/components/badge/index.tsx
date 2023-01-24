@@ -1,6 +1,6 @@
 import { Badge } from 'flowbite-react'
 
-import { type Component } from '../../../types'
+import { type Component } from '~/plugins/types'
 
 export const badge: Component = {
   component: Badge,

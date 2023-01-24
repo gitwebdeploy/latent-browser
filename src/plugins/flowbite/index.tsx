@@ -4,7 +4,7 @@ import * as api from './components'
 
 // note: for theming see:
 // https://flowbite-react.com/theme
-// https://flowbite-react.com/
+// https://flowbite-react.com
 
 export const name = 'fl'
 

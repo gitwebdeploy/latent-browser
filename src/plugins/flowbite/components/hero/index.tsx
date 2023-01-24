@@ -1,7 +1,7 @@
 import { type ReactNode } from 'react'
 import { onlyText } from 'react-children-utilities'
 
-import { type Component } from '../../../types'
+import { type Component } from '~/plugins/types'
 
 // note: for theming see:
 // https://flowbite-react.com/theme

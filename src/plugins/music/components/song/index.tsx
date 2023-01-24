@@ -1,6 +1,6 @@
 import { Song } from 'reactronica'
 
-import { type Component } from '../../../types'
+import { type Component } from '~/plugins/types'
 import { toggle } from '../../../common'
 
 export const song: Component = {

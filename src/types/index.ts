@@ -1,4 +1,7 @@
-import { type ComponentTree, Specification } from 'prompts/types'
+import { type ReactNode } from 'react'
+import { type ComponentTree, type Specification } from 'prompts/types'
+
+export type Loose<T> = { [P in keyof T]?: ReactNode }
 
 export type AppType = 'search' | 'content' | 'favorites' | 'settings'
 

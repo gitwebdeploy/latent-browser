@@ -15,11 +15,11 @@ function onMouseUpdate(e: MouseEvent) {
   $mouse.y = e.pageY
 }
 function onMouseDown() {
-  console.log('onMouseDown')
+  // console.log('onMouseDown')
   appContext.$mouse.down = true
 }
 function onMouseUp() {
-  console.log('onMouseUp')
+  // console.log('onMouseUp')
   appContext.$mouse.down = false
 }
 
