@@ -1,13 +1,12 @@
 import { ReactNode } from 'react'
-import { onlyText } from 'react-children-utilities'
 
 import { type Component } from '~/plugins/types'
 
 const Dialog = ({ children }: { children?: ReactNode }) => <div>{children}</div>
 
-export const input: Component = {
+export const dialog: Component = {
   component: Dialog,
-  doc: 'input',
+  doc: 'dialog',
   allowedParents: 'ui',
   allowedChildren: null,
 }

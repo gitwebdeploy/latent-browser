@@ -6,7 +6,7 @@ import * as api from './components'
 // https://flowbite-react.com/theme
 // https://flowbite-react.com
 
-export const name = 'fl'
+export const name = 'ui'
 
 export const flowbite: Plugin = {
   name,

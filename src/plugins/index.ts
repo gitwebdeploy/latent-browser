@@ -14,9 +14,9 @@ const list = [
   core,
   // daisy ui
   // tailgrids
-  // shadcn,
   ui,
-  flowbite,
+  // flowbite,
+  shadcn,
   fiber,
   pixi,
   // music,

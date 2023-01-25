@@ -12,7 +12,7 @@ import '@splidejs/react-splide/css'
 import { type Component } from '~/plugins/types'
 import { LatentImage } from '~/components'
 
-const Slider = ({
+const Slideshow = ({
   children,
   height,
 }: {
@@ -43,9 +43,9 @@ const Slider = ({
   </Splide>
 )
 
-export const slider: Component = {
-  component: Slider,
-  doc: 'a carousel slider and image gallery, contains a list of images',
+export const slideshow: Component = {
+  component: Slideshow,
+  doc: 'carousel aka slideshow, image slider and gallery',
   params: {
     h: {
       prop: 'height',

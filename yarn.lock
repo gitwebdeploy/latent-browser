@@ -8737,6 +8737,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@xata.io/client@npm:^0.21.6":
+  version: 0.21.6
+  resolution: "@xata.io/client@npm:0.21.6"
+  peerDependencies:
+    typescript: ">=4.5"
+  checksum: 05552553d9e3b93d8d35250595c2c898481120cb380f213fed900c8e54b6c39818db00a840d73dcc98354b1cf01ec28ac3ac7b3ce6d3437b763d973a312c5c11
+  languageName: node
+  linkType: hard
+
 "@xtuc/ieee754@npm:^1.2.0":
   version: 1.2.0
   resolution: "@xtuc/ieee754@npm:1.2.0"
@@ -18332,6 +18341,7 @@ __metadata:
     "@types/react-speech-recognition": ^3.9.0
     "@types/three": ^0.148.0
     "@types/uuid": ^9
+    "@xata.io/client": ^0.21.6
     autoprefixer: ^10.4.13
     babel-loader: ^8.3.0
     bowser: ^2.11.0
@@ -18394,6 +18404,7 @@ __metadata:
     tailwindcss-animate: ^1.0.5
     three: ^0.148.0
     typescript: ^4.7.4
+    use-animation-frame: ^0.1.5
     use-indexeddb: ^2.0.2
     uuid: ^9.0.0
     yaml: ^2.2.1
@@ -27405,6 +27416,15 @@ __metadata:
     nan: ^2.14.2
     node-gyp: latest
   checksum: fd7b246352750fd5032e058ab14220e389bc08bd98d72e9d9f01ac443390435ac354735fb67739d57bb505bfdaeeb2359cd7b8c5d57abc9b82b16455d1be09a3
+  languageName: node
+  linkType: hard
+
+"use-animation-frame@npm:^0.1.5":
+  version: 0.1.5
+  resolution: "use-animation-frame@npm:0.1.5"
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: b89a695ee54322e78ac761924cb52f87b90d5b0915abc582dc5e4dd8506e57db7335006eb1e2fab7e63f51000e78e1bffd41384f7c919bb592052c4434dd895f
   languageName: node
   linkType: hard
 

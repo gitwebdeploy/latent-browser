@@ -1,12 +1,23 @@
 import { ReactNode } from 'react'
-import { onlyText } from 'react-children-utilities'
 
+import { useProps } from '~/hooks'
 import { type Component } from '~/plugins/types'
+import { Button } from '~/components/shadcn-ui'
 
-const Button = ({ children }: { children?: ReactNode }) => <button>{onlyText(children)}</button>
+interface Props {
+  children: ReactNode
+}
+
+const defaults = {
+  children: '',
+}
 
 export const button: Component = {
-  component: Button,
+  component: (looseProps: Props) => {
+    const { children, ...props } = useProps<Props>(looseProps, defaults)
+
+    return <Button {...props}>{children}</Button>
+  },
   doc: 'button',
   allowedParents: 'ui',
   allowedChildren: null,

@@ -1,14 +1,26 @@
 import { ReactNode } from 'react'
-import { onlyText } from 'react-children-utilities'
 
-import { type Component } from '~/plugins/types'
+import { useProps } from '~/hooks'
+import { Component } from '~/plugins/types'
+import { Loose } from '~/types'
 
-const Label = ({ children, htmlFor }: { children?: ReactNode; htmlFor?: ReactNode }) =>
-  <label htmlFor={onlyText(htmlFor)}>{
-    onlyText(children)
-  }</label>
+interface Props {
+  children: ReactNode
+  htmlFor: string
+}
 
-export const textarea: Component = {
+const defaults = {
+  children: null,
+  htmlFor: '',
+}
+
+const Label = (looseProps: Loose<Props>) => {
+  const { htmlFor, children } = useProps(looseProps, defaults)
+
+  return <Label htmlFor={htmlFor}>{children}</Label>
+}
+
+export const label: Component = {
   component: Label,
   doc: 'label',
   allowedParents: 'ui',
@@ -16,7 +28,7 @@ export const textarea: Component = {
   params: {
     f: {
       prop: 'htmlFor',
-      doc: 'htmlFor'
+      doc: 'htmlFor',
     },
-  }
+  },
 }

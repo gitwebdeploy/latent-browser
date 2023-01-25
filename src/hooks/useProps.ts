@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { usePixiTicker } from 'react-pixi-fiber'
+import useAnimationFrame from 'use-animation-frame'
 
 import { Loose } from '~/types'
 import { evaluateParams } from '~/utils'
@@ -24,30 +25,28 @@ export const useProps = <T>(
   allowDynamic: boolean = true
 ): T => {
   const [isDynamic, setDynamic] = useState(false)
-  const [data, setData] = useState<{
-    props: T
-    fingerprint: string
-  }>({
-    props: defaults,
-    fingerprint: '',
-  })
+  const [data, setData] = useState<T>(defaults)
 
-  usePixiTicker(
-    isDynamic
-      ? () => {
-          // console.log('tick')
-          const newProps = evaluateParams(props, defaults)
-          const newFingeprint = JSON.stringify(newProps)
-          if (data.fingerprint !== newFingeprint) {
-            setData({
-              props: newProps,
-              fingerprint: newFingeprint,
-            })
-            console.log('re-rendering ' + newFingeprint)
-          }
-        }
-      : undefined
-  )
+  useAnimationFrame(({ delta }) => {
+    if (!isDynamic) {
+      return
+    }
+    // console.log('tick')
+    const newProps = evaluateParams(props, defaults)
+
+    let hasChanged = false
+    for (const [key, value] of Object.entries(newProps)) {
+      if (data[key] !== value) {
+        hasChanged = true
+        // console.log(`${key}: ${value} has changed (was ${data[key]} before)`)
+        break
+      }
+    }
+    if (hasChanged) {
+      setData(newProps)
+      // console.log('re-rendering ' + newFingeprint)
+    }
+  })
 
   // if we are not dynamic, we run it only once
   useEffect(() => {
@@ -55,11 +54,8 @@ export const useProps = <T>(
     // TODO optimization:
     // we should only evaluate props that can change, and not the others
     const newProps = evaluateParams(props, defaults)
-    const newFingeprint = JSON.stringify(newProps)
-    setData({
-      props: newProps,
-      fingerprint: newFingeprint,
-    })
+
+    setData(newProps)
 
     // then let's see if we should regularly update props
     setDynamic(allowDynamic && hasDynamicContent(props))
@@ -73,5 +69,5 @@ export const useProps = <T>(
     */
   }, []) // put something in here?
 
-  return data.props
+  return data
 }

@@ -28,9 +28,6 @@ const FormField = ({ label, id, type }: { label?: ReactNode; id?: ReactNode; typ
     />
   </div>
 
-const Form = ({ children }: { children?: ReactNode }) =>
-  <form className="flex flex-col gap-4">{children}</form>
-
 export const field: Component = {
   component: FormField,
   doc: 'form field',
@@ -51,7 +48,3 @@ export const field: Component = {
   },
 }
 
-export const form: Component = {
-  component: Form,
-  doc: 'form',
-}

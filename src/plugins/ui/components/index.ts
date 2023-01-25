@@ -1,5 +1,6 @@
 export * from './content'
-export * from './slider'
+export * from './form'
+export * from './slideshow'
 export * from './page'
 export * from './headings'
 export * from './paragraph'
