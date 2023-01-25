@@ -1,3 +1,5 @@
+import { type Plugins } from '~/types'
+
 import { core } from './core'
 import { ui } from './ui'
 import { daisyui } from './daisyui'
@@ -7,7 +9,7 @@ import { fiber } from './fiber'
 import { pixi } from './pixi'
 import { music } from './music'
 import { pdf } from './pdf'
-import { type Plugins } from './types'
+
 import { getIndex, getComponents, getDocumentation } from './build'
 
 const list = [

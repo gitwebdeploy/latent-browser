@@ -64,11 +64,11 @@ export const mockTreeStringFiber = `- "ui.page⎛t≋app߷pri≋#000000߷sec≋#
         }
     ]⎞"
     - "fb.scene⎛":
-      - "co.js⎛⎝$a = $mouse.clicked ? 2 : 1⎞"
+      - "co.js⎛⎝$a = $screen.mouseDown ? 2 : 1⎞"
       - "co.js⎛⎝$b = '#ffffff'⎞"
-      - "fb.ball⎛s≋⎝$a * 0.25⎞߷c≋⎝$mouse.clicked ? $b : '#ff0000'⎞"
-      - "fb.ball⎛s≋⎝$a * 0.5⎞߷c≋⎝$mouse.clicked ? $b : '#00ff00'⎞"
-      - "fb.ball⎛s≋⎝$a * 1.0⎞߷c≋⎝$mouse.clicked ? $b : '#0000ff'⎞"
+      - "fb.ball⎛s≋⎝$a * 0.25⎞߷c≋⎝$screen.mouseDown ? $b : '#ff0000'⎞"
+      - "fb.ball⎛s≋⎝$a * 0.5⎞߷c≋⎝$screen.mouseDown ? $b : '#00ff00'⎞"
+      - "fb.ball⎛s≋⎝$a * 1.0⎞߷c≋⎝$screen.mouseDown ? $b : '#0000ff'⎞"
     - "ui.p⎛Your final score is ⎝$score⎞"
     - "ui.footer⎛":
       - "ui.footer_copyright⎛b≋DuckBlog߷y≋2021"
@@ -115,6 +115,6 @@ export const mockTreeStringPixi = `
     - "ui.avatar⎛happy dog"
     - "px.stage⎛b≋#c7a4b0":
       - "px.container⎛":
-        - "px.sprite⎛x≋⎝$mouse.x - 100⎞߷y≋⎝$mouse.y⎞߷w≋200߷h≋200߷a cat"`
+        - "px.sprite⎛x≋⎝$screen.mouseX - 100⎞߷y≋⎝$screen.mouseY⎞߷w≋200߷h≋200߷a cat"`
 
 export const mockTreeString = mockTreeStringPixi

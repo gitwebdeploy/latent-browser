@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import { Text } from '@react-pdf/renderer'
 import { onlyText } from 'react-children-utilities'
 
-import { type Component } from '~/plugins/types'
+import { type Component } from '~/types'
 import { styles } from '../styles'
 
 export const author: Component = {

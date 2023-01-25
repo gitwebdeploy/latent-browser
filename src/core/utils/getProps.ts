@@ -1,4 +1,4 @@
-import { Param } from '~/plugins/types'
+import { Param } from '~/types'
 import { parseMultiline } from '~/utils'
 
 // get the prop to apply to a component, using a schema (the params object)

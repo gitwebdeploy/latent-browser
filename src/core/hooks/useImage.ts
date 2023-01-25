@@ -5,9 +5,9 @@ import {
   imagineImage as getFromOpenAI,
 } from '~/providers/openai'
 import { imagineImage as getFromSDAPI } from '~/providers/stablediffusionapi'
+import { useSettings } from '~/hooks'
 
-import { useSettings } from './useSettings'
-import mock from '../../public/mocks/mock.jpg'
+import mock from '../../../public/mocks/mock.jpg'
 
 const noop = (): Promise<ImaginedImage> => null
 

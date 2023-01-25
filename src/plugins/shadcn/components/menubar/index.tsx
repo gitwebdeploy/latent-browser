@@ -1,8 +1,8 @@
 import { Children, ReactNode } from 'react'
 import { onlyText } from 'react-children-utilities'
 
-import { useProps } from '~/hooks'
-import { Component } from '~/plugins/types'
+import { useProps } from '~/core/hooks'
+import { Component } from '~/types'
 import {
   Menubar,
   MenubarContent,

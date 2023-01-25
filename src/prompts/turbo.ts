@@ -27,20 +27,20 @@ Woof, woof!`,
   ''
 )}ᐅminimalist page displaying the mouse cursor position, with a simple 2-chords song playing in the background${[
   `⓪ui.h1߷Mouse tracking app`,
-  `⓪ui.p߷Mouse cursor is at $mouse.x and $mouse.y`,
+  `⓪ui.p߷Mouse cursor is at $screen.mouseX and $screen.mouseY`,
   `⓪music.song߷isPlaying=true`,
   `①music.track߷steps=[['C3','E3','G3'],['G3','B4','D4']]`,
   `②music.instrument߷type=synth`,
 ].join(
   ''
 )}ᐅ3D app with three rgb balls of different size, without any UI except a title. Balls should become twice as big and white when the mouse is clicked${[
-  `⓪co.js⎝$a = $mouse.down ? 2 : 1⎞`,
+  `⓪co.js⎝$a = $screen.mouseDown ? 2 : 1⎞`,
   `⓪co.js⎝$b = '#ffffff'⎞`,
   `⓪ui.h2߷3D App Demo`,
   `①fb.scene`,
-  `②fb.ball߷size=⎝$a * 1.5⎞߷color=⎝$mouse.down ? $b : '#ff0000'⎞`,
-  `②fb.ball߷size=⎝$a * 2.5⎞߷color=⎝$mouse.down ? $b : '#00ff00'⎞`,
-  `②fb.ball߷size=⎝$a * 3.5⎞߷color=⎝$mouse.down ? $b : '#0000ff'⎞`,
+  `②fb.ball߷size=⎝$a * 1.5⎞߷color=⎝$screen.mouseDown ? $b : '#ff0000'⎞`,
+  `②fb.ball߷size=⎝$a * 2.5⎞߷color=⎝$screen.mouseDown ? $b : '#00ff00'⎞`,
+  `②fb.ball߷size=⎝$a * 3.5⎞߷color=⎝$screen.mouseDown ? $b : '#0000ff'⎞`,
 ].join('')}`
 
 export const getTurboPrompt = (
@@ -53,9 +53,9 @@ Documentation of available components and their parameters:
 ${apiDoc}
 
 You are free to use the following variables (if you write JS expression you need to escape double quotes):
-- $mouse.x: mouse coordinates in X
-- $mouse.y: mouse coordinates in Y
-- $mouse.down: true if mouse is down
+- $screen.mouseX: mouse coordinates in X
+- $screen.mouseY: mouse coordinates in Y
+- $screen.mouseDown: true if mouse is down
 
 Rules:
 - You can create new JS variables to change multiple items at once

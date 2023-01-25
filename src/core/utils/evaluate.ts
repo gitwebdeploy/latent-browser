@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { onlyText } from 'react-children-utilities'
 
-import { appContext } from './appContext'
+import { appContext } from '~/core/context'
 
 const history: string[] = []
 

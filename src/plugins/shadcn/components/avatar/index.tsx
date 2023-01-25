@@ -1,11 +1,9 @@
 import { ReactNode } from 'react'
 import { onlyText } from 'react-children-utilities'
 
-import { useProps } from '~/hooks'
-import { Component } from '~/plugins/types'
+import { useProps, useImage } from '~/core/hooks'
+import { Component, Loose } from '~/types'
 import { Avatar, AvatarImage, AvatarFallback } from '~/components/shadcn-ui'
-import { useImage } from '~/hooks'
-import { Loose } from '~/types'
 
 interface Props {
   children: ReactNode

@@ -1,7 +1,7 @@
 import { Input } from '~/components/shadcn-ui'
-import { useProps } from '~/hooks'
+import { useProps } from '~/core/hooks'
 import { toggle } from '~/plugins/common'
-import { type Component } from '~/plugins/types'
+import { type Component } from '~/types'
 import { Loose } from '~/types'
 
 interface Props {

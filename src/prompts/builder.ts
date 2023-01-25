@@ -39,7 +39,7 @@ const examples = `
     - "ui.sidebar_item⎛i≋info߷Other"
   - "ui.content⎛":
     - "ui.h1⎛Mouse tracking app"
-    - "ui.md⎛Mouse cursor is at *⎝$mouse.x⎞* and *⎝$mouse.y⎞*"
+    - "ui.md⎛Mouse cursor is at *⎝$screen.mouseX⎞* and *⎝$screen.mouseY⎞*"
     - "mu.song⎛a≋true߷b≋110":
       - "mu.track⎛steps≋⎝[['C3','E3','G3'],['G3','B4','D4']]⎞":
         - "mu.instrument⎛type≋synth"
@@ -59,13 +59,13 @@ const examples = `
     - "ui.testimonial⎛a≋John Doe߷b≋Executive Assistant߷c≋photo of an executive assistant, working on a computer, bokeh߷q≋Time is money and TimeWatch changed my life."
 # 3D game app with three rgb balls of various size, no UI but a 3D text saying Booya. Balls should become 2x AS big and white when we click
 - "ui.page⎛t≋full":
-  - "co.js⎛⎝$a = $mouse.down ? 2 : 1⎞"
+  - "co.js⎛⎝$a = $screen.mouseDown ? 2 : 1⎞"
   - "co.js⎛⎝$b = '#ffffff'⎞"
   - "fb.scene⎛":
     - "fb.text3D⎛Booya"
-    - "fb.ball⎛s≋⎝$a * 1.5⎞߷c≋⎝$mouse.down ? $b : '#ff0000'⎞"
-    - "fb.ball⎛s≋⎝$a * 2.5⎞߷c≋⎝$mouse.down ? $b : '#00ff00'⎞"
-    - "fb.ball⎛s≋⎝$a * 3.5⎞߷c≋⎝$mouse.down ? $b : '#0000ff'⎞"`
+    - "fb.ball⎛s≋⎝$a * 1.5⎞߷c≋⎝$screen.mouseDown ? $b : '#ff0000'⎞"
+    - "fb.ball⎛s≋⎝$a * 2.5⎞߷c≋⎝$screen.mouseDown ? $b : '#00ff00'⎞"
+    - "fb.ball⎛s≋⎝$a * 3.5⎞߷c≋⎝$screen.mouseDown ? $b : '#0000ff'⎞"`
 
 export const getBuilderPrompt = (
   spec: Specification,
@@ -77,9 +77,9 @@ Documentation of available components and their parameters:
 ${apiDoc}
 
 You are free to use the following variables (if you write JS expression you need to escape double quotes):
-- $mouse.x: mouse position in X
-- $mouse.y: mouse position in Y
-- $mouse.down: true if mouse is down
+- $screen.mouseX: mouse position in X
+- $screen.mouseY: mouse position in Y
+- $screen.mouseDown: true if mouse is down
 
 Rules:
 - You can create new variables to change multiple items at once.

@@ -9,7 +9,7 @@ import {
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css'
 
-import { type Component } from '~/plugins/types'
+import { type Component } from '~/types'
 import { LatentImage } from '~/components'
 
 const Slideshow = ({

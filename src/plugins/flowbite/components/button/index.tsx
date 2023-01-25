@@ -1,6 +1,6 @@
 import { Button } from 'flowbite-react'
 
-import { type Component } from '~/plugins/types'
+import { type Component } from '~/types'
 
 export const button: Component = {
   component: (props: any) => (

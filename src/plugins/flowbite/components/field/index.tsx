@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import { onlyText } from 'react-children-utilities'
 import { Label, TextInput } from 'flowbite-react'
 
-import { type Component } from '~/plugins/types'
+import { type Component } from '~/types'
 
 const getType = (value: string = '') => {
   return {

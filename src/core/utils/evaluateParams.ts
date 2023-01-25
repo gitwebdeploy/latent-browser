@@ -1,5 +1,6 @@
 import { Loose } from '~/types'
-import { evaluate } from '~/utils'
+
+import { evaluate } from './evaluate'
 
 export const evaluateParams = <T>(props: Loose<T>, defaults: T): T =>
   Object.entries(Array.isArray(props) ? {} : props || {}).reduce(

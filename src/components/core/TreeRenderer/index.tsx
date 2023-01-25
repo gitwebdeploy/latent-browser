@@ -1,10 +1,13 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useInterval } from '@mantine/hooks'
 
-import { useComponentTree } from './useComponentTree'
-import { renderTree } from './render'
-import { ComponentTree } from '~/prompts'
 import { useMouseDown, useMousePosition } from '~/hooks'
+import { ComponentTree } from '~/prompts'
+
+import { useComponentTree } from '~/core/hooks'
+import { AppContext } from '~/core/context'
+
+import { renderTree } from './render'
 
 export const TreeRenderer = ({
   children,
@@ -37,5 +40,5 @@ export const TreeRenderer = ({
     [tree, forceRefresh]
   )
 
-  return <>{content}</>
+  return <AppContext.Provider value={{}}>{content}</AppContext.Provider>
 }

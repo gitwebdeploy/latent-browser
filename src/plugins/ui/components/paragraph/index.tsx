@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react'
-import { useProps } from '~/hooks'
-import { type Component } from '~/plugins/types'
+import { useProps } from '~/core/hooks'
+import { type Component } from '~/types'
 import { Loose } from '~/types'
 
 interface Props {

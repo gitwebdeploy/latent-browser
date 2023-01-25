@@ -1,5 +1,5 @@
 import { Badge, Button, Navbar, Table } from 'daisyui'
-import { type Plugin } from '../types'
+import { type Plugin } from '~/types'
 import {
   xs,
   sm,

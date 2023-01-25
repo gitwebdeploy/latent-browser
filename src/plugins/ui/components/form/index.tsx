@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import { Component } from '~/plugins/types'
+import { Component } from '~/types'
 
 const Form = ({ children }: { children?: ReactNode }) => (
   <form className="flex flex-col gap-4">{children}</form>

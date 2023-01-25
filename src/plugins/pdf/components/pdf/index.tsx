@@ -1,7 +1,7 @@
 import { memo, ReactNode } from 'react'
 import { Document, Page, PDFViewer } from '@react-pdf/renderer'
 
-import { type Component } from '~/plugins/types'
+import { type Component } from '~/types'
 import { styles } from '../styles'
 import { Pagination } from '../pagination/Pagination'
 

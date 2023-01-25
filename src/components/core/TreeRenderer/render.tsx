@@ -1,7 +1,8 @@
 import { Fragment, ReactNode, memo } from 'react'
 
 import { components, globalIndex, scopedIndexes } from '~/plugins'
-import { getProps } from './getProps'
+
+import { getProps } from '~/core/utils'
 
 export const RenderNode = ({
   children: node = {},

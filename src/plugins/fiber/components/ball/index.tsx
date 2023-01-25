@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { type Component } from '~/plugins/types'
+import { type Component } from '~/types'
 
 import { Sphere } from '../../primitives/Sphere'
 

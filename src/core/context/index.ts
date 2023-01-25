@@ -1,30 +1,33 @@
+import { createContext } from 'react'
 import * as $ from 'jquery'
 
 // this is the data exposed to the app
 export const appContext: any = {
-  $mouse: {
-    x: 0, //mouse coordinates in X
-    y: 0, // mouse coordinates in Y
-    down: false, // if mouse is clicked, false if not clicked
+  $screen: {
+    mouseX: 0, //mouse coordinates in X
+    mouseY: 0, // mouse coordinates in Y
+    mouseDown: false, // if mouse is clicked, false if not clicked
   },
 }
 
+export const AppContext = createContext(appContext)
+
 function onMouseUpdate(e: MouseEvent) {
-  const $mouse = appContext.$mouse
-  $mouse.x = e.pageX
-  $mouse.y = e.pageY
+  const $screen = appContext.$screen
+  $screen.mouseX = e.pageX
+  $screen.mouseY = e.pageY
 }
 function onMouseDown() {
   // console.log('onMouseDown')
-  appContext.$mouse.down = true
+  appContext.$screen.mouseDown = true
 }
 function onMouseUp() {
   // console.log('onMouseUp')
-  appContext.$mouse.down = false
+  appContext.$screen.mouseDown = false
 }
 
 if (typeof window !== 'undefined') {
-  window['$mouse'] = appContext.$mouse
+  window['$screen'] = appContext.$screen
   window['$'] = $
 
   document.addEventListener('mousemove', onMouseUpdate, false)

@@ -1,16 +1,16 @@
-import { parse } from 'yaml'
+import { parse as parseYaml } from 'yaml'
 
 import { ComponentTree } from '~/prompts'
 import { safeYamlLineReturns } from '~/utils'
 
-export const safeParse = (input?: string | ComponentTree): ComponentTree => {
+export const parse = (input?: string | ComponentTree): ComponentTree => {
   try {
     // empty inputs are okay, it means we are not initialized yet
     if (JSON.stringify(input) === '""') {
       return []
     }
     const newTree: ComponentTree =
-      typeof input === 'string' ? parse(safeYamlLineReturns(input)) : input
+      typeof input === 'string' ? parseYaml(safeYamlLineReturns(input)) : input
     console.log('useComponentTree: newTree = ', newTree)
     if (!newTree || !Array.isArray(newTree) || newTree.length === 0) {
       console.log(

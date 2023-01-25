@@ -1,7 +1,8 @@
 import { ReactNode } from 'react'
 import { onlyText } from 'react-children-utilities'
 
-import { useImage } from '~/hooks/useImage'
+import { useImage } from '~/core/hooks'
+
 import { placeholder } from './placeholder'
 
 export const LatentImage = ({

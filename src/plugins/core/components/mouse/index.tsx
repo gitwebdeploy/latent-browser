@@ -1,6 +1,6 @@
 import { cloneElement, ReactNode } from 'react'
 
-import { Component } from '~/plugins/types'
+import { Component } from '~/types'
 
 const Mouse = ({ children }: { children?: ReactNode }): JSX.Element => {
   return cloneElement(children as any, {})

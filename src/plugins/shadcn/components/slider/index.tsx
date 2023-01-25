@@ -1,5 +1,5 @@
-import { useProps } from '~/hooks'
-import { Component } from '~/plugins/types'
+import { useProps } from '~/core/hooks'
+import { Component } from '~/types'
 import { Slider } from '~/components/shadcn-ui'
 import { Loose } from '~/types'
 

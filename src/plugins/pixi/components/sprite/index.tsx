@@ -1,11 +1,13 @@
 import { ReactNode, useEffect, useState } from 'react'
 import { onlyText } from 'react-children-utilities'
-import { Sprite as PSprite, usePixiTicker } from 'react-pixi-fiber'
 
-import { Component } from '~/plugins/types'
-import { useLatentPixiTexture } from '~/hooks/useLatentPixiTexture'
-import { useProps } from '~/hooks'
-import { Loose } from '~/types'
+// the /index.js import is necessary due to a bug, see:
+// https://github.com/michalochman/react-pixi-fiber/issues/247#issuecomment-1027893254
+// https://gitter.im/react-pixi-fiber/Lobby?at=6355496d0a8c6e22a1d6bd82
+import { Sprite as PSprite, usePixiTicker } from 'react-pixi-fiber/index.js'
+
+import { useLatentPixiTexture, useProps } from '~/core/hooks'
+import { Component, Loose } from '~/types'
 
 interface Props {
   children: ReactNode

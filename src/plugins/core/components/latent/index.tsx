@@ -1,8 +1,8 @@
 import { ReactNode } from 'react'
 import { onlyText } from 'react-children-utilities'
 
-import { type Component } from '~/plugins/types'
-import { useLatentComponent } from '~/hooks'
+import { type Component } from '~/types'
+import { useLatentComponent } from '~/core/hooks'
 
 // a component that will be rendered asynchronousy by the LLM
 const Latent = ({ children }: { children?: ReactNode }): JSX.Element => {

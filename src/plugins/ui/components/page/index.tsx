@@ -1,8 +1,8 @@
 import { Children, ReactNode } from 'react'
 import { onlyText } from 'react-children-utilities'
 
-import { Content } from '~/components/core/Content'
-import { type Component } from '~/plugins/types'
+import { Content } from '~/components'
+import { type Component } from '~/types'
 
 const Page = ({
   children,

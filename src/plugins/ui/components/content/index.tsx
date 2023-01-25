@@ -1,6 +1,5 @@
-import { Content } from '~/components/core/Content'
-
-import { Component } from '~/plugins/types'
+import { Content } from '~/components/core'
+import { Component } from '~/types'
 
 export const content: Component = {
   component: Content,

@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { onlyText } from 'react-children-utilities'
 
-import { type Component } from '~/plugins/types'
+import { type Component } from '~/types'
 
 const Option = ({ children, value }: { children?: ReactNode; value?: ReactNode }) =>
   <option value={onlyText(value)}>{onlyText(children)}</option>

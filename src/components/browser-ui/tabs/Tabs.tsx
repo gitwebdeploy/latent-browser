@@ -5,9 +5,9 @@ import RCTabs from 'rc-tabs'
 import { v4 as uuidv4 } from 'uuid'
 
 // import { v4 as uuidv4 } from 'uuid'
-import { AppTab } from '~/plugins/types'
-import { useStoredApps, useOpenTabs } from '../../../hooks'
-import { getKeyForApps } from '../../../utils/getKeyForApps'
+import { AppTab } from '~/types'
+import { useStoredApps, useOpenTabs } from '~/hooks'
+import { getKeyForApps } from '~/utils'
 
 export const getEmptyTab = (app?: Partial<AppTab>) =>
   ({

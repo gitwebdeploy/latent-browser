@@ -4,13 +4,13 @@ import { Configuration, OpenAIApi } from 'openai'
 // import * as gpt3encoder from 'gpt-3-encoder'
 // const { encode, decode } = gpt3encoder
 export * from './types'
-import { ImaginedImage } from './types'
 import * as mocks from './mocks'
 import { type ComponentTree, presets, type PromptSettings } from '~/prompts'
 import { getLatentBrowserName, isTreeEmpty } from '~/utils'
+import { mockTreeString } from '~/core/mocks'
+import { parse } from '~/core/utils'
 import { Settings } from '~/types'
-import { mockTreeString } from '~/components/core/TreeRenderer/mocks'
-import { safeParse } from '~/engine/parser/safeParse'
+import { ImaginedImage } from './types'
 
 // don't do this at home!
 // if we deploy one day to the cloud, we MUST rewrite this..
@@ -129,7 +129,7 @@ export const imagineTree = async (
 
     try {
       const treeStr = mockTreeString
-      const tree = safeParse(treeStr)
+      const tree = parse(treeStr)
 
       return {
         tree,
@@ -159,7 +159,7 @@ export const imagineTree = async (
 
     console.log(`imagineTree> treeStr:\n${treeStr}`)
 
-    const tree = safeParse(treeStr)
+    const tree = parse(treeStr)
 
     // remove all trailing commas (`input` variable holds the erroneous JSON)
     if (isTreeEmpty(tree)) {

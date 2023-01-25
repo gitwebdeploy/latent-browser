@@ -10,7 +10,7 @@ import {
   TableBody,
   TdStyle,
 } from 'tailgrids-react'
-import { type Plugin } from '../types'
+import { type Plugin } from '~/types'
 
 // doc: https://tailgrids.com/docs/react
 

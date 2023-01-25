@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react'
-import { usePixiTicker } from 'react-pixi-fiber'
 import useAnimationFrame from 'use-animation-frame'
 
 import { Loose } from '~/types'
-import { evaluateParams } from '~/utils'
-import { hasDynamicContent } from '~/utils/hasDynamicContent'
+
+import { evaluateParams, hasDynamicContent } from '../utils'
 
 // special hook that transform "raw" string props into "clean" props
 // it also handle watches the reference, to re-run again if something changed

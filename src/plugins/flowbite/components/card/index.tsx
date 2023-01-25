@@ -1,6 +1,6 @@
 import { Card } from 'flowbite-react'
 
-import { type Component } from '~/plugins/types'
+import { type Component } from '~/types'
 import { toggle } from '../../../common'
 
 export const card: Component = {

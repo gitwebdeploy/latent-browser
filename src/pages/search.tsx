@@ -5,7 +5,7 @@ import { imagineJSON } from '~/providers/openai'
 import { searchTemplate } from 'prompts/search'
 import { BigSearchInput, ModelProgressBar } from '~/components'
 import { useParam, useInterval, useOpenTabs, useSettings } from '~/hooks'
-import { getKeyForApps } from '~/utils/getKeyForApps'
+import { getKeyForApps } from '~/utils'
 
 interface Result {
   title: string

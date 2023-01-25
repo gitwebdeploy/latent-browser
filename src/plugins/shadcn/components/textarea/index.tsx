@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { onlyText } from 'react-children-utilities'
 
-import { type Component } from '~/plugins/types'
+import { type Component } from '~/types'
 
 const Textarea = ({ children, id }: { children?: ReactNode; id?: ReactNode }) =>
   <textarea id={onlyText(id)} name={onlyText(id)} value={onlyText(children)} />

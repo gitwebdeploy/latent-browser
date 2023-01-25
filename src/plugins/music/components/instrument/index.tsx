@@ -1,6 +1,6 @@
 import { Instrument } from 'reactronica'
 
-import { type Component } from '~/plugins/types'
+import { type Component } from '~/types'
 
 export const instrument: Component = {
   component: Instrument,

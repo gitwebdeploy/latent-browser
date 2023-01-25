@@ -11,6 +11,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '~/components/shadcn-ui'
-import { useProps } from '~/hooks'
-import { Component } from '~/plugins/types'
+import { useProps } from '~/core/hooks'
+import { Component } from '~/types'
 import { Loose } from '~/types'

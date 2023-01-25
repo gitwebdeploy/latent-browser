@@ -6,9 +6,9 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from '~/components/shadcn-ui'
-import { useProps } from '~/hooks'
+import { useProps } from '~/core/hooks'
 import { toggle } from '~/plugins/common'
-import { Component } from '~/plugins/types'
+import { Component } from '~/types'
 import { Loose } from '~/types'
 
 interface AccordionItemProps {

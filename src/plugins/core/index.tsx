@@ -1,4 +1,4 @@
-import { Plugin } from '../types'
+import { type Plugin } from '~/types'
 
 import * as api from './components'
 

@@ -1,6 +1,6 @@
 import { Footer } from 'flowbite-react'
 
-import { type Component } from '~/plugins/types'
+import { type Component } from '~/types'
 
 export const footer: Component = {
   component: Footer,

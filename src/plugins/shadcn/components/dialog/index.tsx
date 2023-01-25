@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import { type Component } from '~/plugins/types'
+import { type Component } from '~/types'
 
 const Dialog = ({ children }: { children?: ReactNode }) => <div>{children}</div>
 

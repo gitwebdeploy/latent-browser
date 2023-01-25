@@ -1,6 +1,6 @@
 import { Children, ReactNode } from 'react'
 import { onlyText } from 'react-children-utilities'
-import { Component } from '~/plugins/types'
+import { Component } from '~/types'
 
 const CheckMark = () => (
   <svg

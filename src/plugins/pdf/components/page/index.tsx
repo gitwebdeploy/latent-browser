@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { Page } from '@react-pdf/renderer'
 
-import { type Component } from '~/plugins/types'
+import { type Component } from '~/types'
 import { styles } from '../styles'
 
 export const page: Component = {

@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import { onlyText } from 'react-children-utilities'
 
 import { LatentImage } from '~/components'
-import { Component } from '~/plugins/types'
+import { Component } from '~/types'
 
 const Testimonial = ({
   quote,

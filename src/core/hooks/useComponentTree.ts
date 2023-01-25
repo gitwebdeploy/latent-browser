@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 
 import { ComponentTree } from '~/prompts'
-import { safeParse } from '~/engine/parser/safeParse'
+import { parse } from '~/core/utils'
 
 const getFingerpint = (input?: any) => {
   try {
@@ -13,6 +13,6 @@ const getFingerpint = (input?: any) => {
 
 export const useComponentTree = (input?: string | ComponentTree) => {
   const fingerprint = getFingerpint(input)
-  const tree = useMemo(() => safeParse(input), [input, fingerprint])
+  const tree = useMemo(() => parse(input), [input, fingerprint])
   return tree
 }

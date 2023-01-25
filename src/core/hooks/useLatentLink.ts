@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import { ImaginedImage } from '../providers/openai'
-import { useSettings } from './useSettings'
+
+import { ImaginedImage } from '~/providers/openai'
+import { useSettings } from '~/hooks'
 
 export const useLatentLink = ({ alt }: { alt?: string }) => {
   const [href] = useState('#todo!')

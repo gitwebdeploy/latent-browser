@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { Accordion } from 'flowbite-react'
 
-import { type Component } from '~/plugins/types'
+import { type Component } from '~/types'
 
 export const accordion: Component = {
   component: Accordion,

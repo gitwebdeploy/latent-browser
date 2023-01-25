@@ -1,4 +1,4 @@
-import { type Component } from '~/plugins/types'
+import { type Component } from '~/types'
 
 const Box = () => (
   <mesh>

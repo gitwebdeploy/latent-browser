@@ -1,22 +1,13 @@
 import { useEffect, useState } from 'react'
 
 import { TreeRenderer } from '~/components'
-import { mockTreeString } from '~/components/core/TreeRenderer/mocks'
-import { getBuilderPrompt, type Specification } from '~/prompts'
-import { apiDoc, components } from '~/plugins'
-
-import { sample } from '~/engine/parser/mock'
-import { parseTurbo } from '~/engine/parser'
+import { mockTreeString } from '~/core/mocks'
+import { type Specification } from '~/prompts'
 
 // a search result page in the style of a famous search engine =)
 function Test() {
   const [tree, setTree] = useState<string>('')
   useEffect(() => {
-    /*
-    console.log('sample:', sample)
-    console.log('result:', parseTurbo(sample))
-    console.log('Test:', { apiDoc, components })
-    */
 
     const spec: Specification = {
       layout: ['many articles'],

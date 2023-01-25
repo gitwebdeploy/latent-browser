@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import { ImaginedImage } from '~/providers/openai'
-
-import { useSettings } from './useSettings'
+import { useSettings } from '~/hooks/useSettings'
 
 export const useServerSideImage = ({
   alt,
