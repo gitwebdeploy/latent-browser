@@ -1,5 +1,5 @@
 import { Param } from '~/plugins/types'
-import { evaluate } from '~/utils'
+import { parseMultiline } from '~/utils'
 
 // get the prop to apply to a component, using a schema (the params object)
 export const getProps = ({
@@ -31,8 +31,9 @@ export const getProps = ({
         value = arr.join('≋')
       }
 
-      // we finally restore our line returns!..
-      value = value.replace(/ᐃ/g, '\n')
+      if (value.includes('ᐃ')) {
+        value = parseMultiline(value, 'ᐃ')
+      }
 
       // now it's time to interpret some JS, if any
       // const { result } = evaluate(value)

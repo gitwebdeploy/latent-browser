@@ -64,10 +64,10 @@ export const evaluate = <T>(
       isDynamic: !!js.match(/\$[a-zA-Z_]+/),
     }
   } catch (exc) {
-    console.log('failed to eval: ' + exc)
+    // console.log('failed to eval: ' + exc)
 
     return {
-      result: src.replace(/⎝([^⎞]+)⎞/, defaultValue),
+      result: src.replace(/⎝([^⎞]+)⎞/, `${defaultValue}`),
       isDynamic: false,
     }
   }

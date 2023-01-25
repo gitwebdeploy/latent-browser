@@ -69,6 +69,7 @@ module.exports = {
     backgroundColor: ['active'],
   },
   plugins: [
+    require('@tailwindcss/typography'),
     require('tailwind-scrollbar'),
 
     require('@tailwindcss/forms'),

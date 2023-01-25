@@ -19,12 +19,12 @@ export const mockTreeStringFiber = `- "ui.page⎛t≋app߷pri≋#000000߷sec≋#
     # Welcome To Duck Blog!
     Welcome to my blog about ducks!
     Here, you will find all the necessary information about ducks,
-    from the basics of a duck's life cycle to its migration habits,
+    from the basics of a *duck*'s life cycle to its migration habits,
     mating rituals, and parenting techniques.
     
+    # Me and my duck life
     It will be filled with fun facts,
-    stories, and anecdotes about ducks in an interesting,
-    yet informative style.
+    stories, and anecdotes about *ducks*.
     
     So, come join us and let's explore the beautiful
     and fascinating world of ducks together!"
@@ -82,16 +82,31 @@ export const mockTreeStringPixi = `
     - "ui.accordion⎛":
       - "ui.accordion_item⎛v≋section1߷l≋Lorem Ipsum߷This is a fake section.."
       - "ui.accordion_item⎛v≋section2߷l≋Dolor Sit Amet߷This is another fake section.."
+    - "ui.md⎛
+      # Result
+      Result: ⎝$z⎞
+      # Welcome To Duck Blog!
+      Welcome to my blog about ducks!
+      Here, you will find all the necessary information about ducks,
+      from the basics of a *duck*'s life cycle to its migration habits,
+      mating rituals, and parenting techniques.
+      
+      # Me and my duck life
+      It will be filled with fun facts,
+      stories, and anecdotes about *ducks*.
+      
+      So, come join us and let's explore the beautiful
+      and fascinating world of ducks together!"
     - "ui.form⎛":
       - "ui.button⎛Hello"
       - "ui.button⎛World!"
-      - "ui.checkbox⎛"
       - "ui.slider⎛"
-      - "ui.field⎛t≋text߷i≋test1߷l≋Test 1߷p≋type something"
+      - "ui.field⎛t≋switch߷i≋test1߷l≋Test 1"
       - "ui.field⎛t≋text߷i≋test2߷l≋Test 2߷p≋type something"
       - "ui.field⎛t≋number߷i≋test3߷l≋Test 3߷p≋type something"
       - "ui.field⎛t≋number߷i≋test4߷l≋Test 4߷p≋type something"
       - "ui.field⎛t≋email߷i≋test5߷l≋Test 5߷p≋type something"
+      - "ui.field⎛t≋text߷i≋test6߷l≋Test 6߷p≋type something"
     - "ui.menubar⎛l≋Menu Ipsum":
       - "Lorem"
       - "Ipsum"

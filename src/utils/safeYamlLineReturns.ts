@@ -9,12 +9,10 @@ export const safeYamlLineReturns = (input: string) => {
   - "pdf.p߷color=#ff0000":
   - "Welcome to.....find out more..."ᐃ    - # Further paragraphs here
   */
+  // console.log('cleanInput: input', input)
   const step1 = input.trim().replace(/\n/g, 'ᐃ')
-  console.log('cleanInput: step1', step1)
+  // console.log('cleanInput: step1', step1)
   const step2 = step1.replace(/(["]?[:]?)ᐃ(\s*)-\s"/g, '$1\n$2- "')
-  //console.log('cleanInput: step2', step2)
-  const step3 = step2.replace(/ᐃ\s\s*/g, ' ')
-  console.log('cleanInput: step3', step3)
-
-  return step3
+  console.log('cleanInput: step2', step2)
+  return step2
 }

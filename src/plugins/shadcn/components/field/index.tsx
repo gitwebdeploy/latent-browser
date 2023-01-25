@@ -1,4 +1,4 @@
-import { Input, Label } from '~/components/shadcn-ui'
+import { Input, Label, Switch } from '~/components/shadcn-ui'
 import { useProps } from '~/hooks'
 import { toggle } from '~/plugins/common'
 import { Component } from '~/plugins/types'
@@ -18,20 +18,27 @@ const defaults = {
   label: '',
   disabled: false,
   placeholder: '',
-  type: 'text', // email, number, text
+  type: 'text', // email, number, text, switch
   value: '',
 }
 
 const FormField = (looseProps: Loose<Props>) => {
-  const { id, label, value, ...props } = useProps(looseProps, defaults)
+  const { id, label, value, type, ...props } = useProps(looseProps, defaults)
 
-  return (
+  return type === 'switch' ? (
+    <div className="flex items-center space-x-2">
+      <Switch id={id} />
+      <Label htmlFor={id}>{label}</Label>
+    </div>
+  ) : (
     <div className="grid w-full max-w-sm items-center gap-1.5">
       <Label htmlFor={id}>{label}</Label>
       <Input
+        // be careful: we can't just drop the ...props inside the input here
         // {...props}
         id={id}
         name={id}
+        type={type}
         // onChange={() => console.log('TODO')}
       />
     </div>

@@ -21,10 +21,8 @@ const Page = ({
         'bg-primary-background h-screen w-screen flex overflow-hidden',
         layoutType,
       ].join(' ')}
-      // if we have only one child then we wrap it into a nice content block
-      // full screen applications can just omit to call Page
     >
-      {nbItems === 1 ? <Content>{children}</Content> : children}
+      {children}
     </div>
   )
 }
